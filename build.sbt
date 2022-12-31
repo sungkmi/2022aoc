@@ -14,9 +14,9 @@ val V = new {
 val Dependencies = new {
   lazy val aoc = Seq(
     libraryDependencies ++= Seq(
-      "org.typelevel"               %% "cats-effect"      % V.catsEffect,
-      "com.outr" %% "scribe-slf4j" % V.scribe,
-      "com.github.ghik" %% "zerowaste" % V.zerowaste cross CrossVersion.full,
+      "org.typelevel"   %% "cats-effect"  % V.catsEffect,
+      "com.outr"        %% "scribe-slf4j" % V.scribe,
+      "com.github.ghik" %% "zerowaste"    % V.zerowaste cross CrossVersion.full,
     ),
   )
 
@@ -34,10 +34,7 @@ ThisBuild / scalaVersion := V.Scala
 ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % V.organiseImports
 ThisBuild / semanticdbEnabled := true
 
-lazy val root = (project in file("."))
-  .aggregate(aoc)
-
-lazy val aoc = (project in file("modules/aoc"))
+lazy val aoc = (project in file("."))
   .settings(Dependencies.aoc)
   .settings(Dependencies.tests)
   .settings(
