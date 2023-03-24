@@ -37,3 +37,8 @@ Monkey 3:
   test("part1"):
     withMunitAssertions: a =>
       a.assertEquals(Day11.part1(input), BigInt(10605))
+
+  test("part2"):
+    withMunitAssertions: a =>
+      a.assertEquals(Day11.part2(input), BigInt(2713310158L))
+      
